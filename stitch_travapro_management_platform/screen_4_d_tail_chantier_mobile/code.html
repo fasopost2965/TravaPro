@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#dce1ff",
+                      "on-primary-fixed": "#001550",
+                      "surface-dim": "#d8dadc",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f2f4f6",
+                      "secondary": "#855300",
+                      "surface-container-highest": "#e0e3e5",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#eceef0",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "on-primary-container": "#cbd4ff",
+                      "tertiary": "#37465c",
+                      "on-secondary-container": "#684000",
+                      "surface-tint": "#1f51da",
+                      "primary": "#0038af",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "inverse-primary": "#b6c4ff",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-primary-fixed-variant": "#003ab3",
+                      "on-surface": "#191c1e",
+                      "border": "#E2E8F0",
+                      "success": "#10B981",
+                      "primary-container": "#1b4fd8",
+                      "text-muted": "#64748B",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "on-surface-variant": "#434655",
+                      "secondary-fixed": "#ffddb8",
+                      "danger": "#EF4444",
+                      "tertiary-fixed": "#d3e4fe",
+                      "text-primary": "#0F172A",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "surface": "#FFFFFF",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#4e5e74",
+                      "currency-mad": "#1B4FD8",
+                      "on-background": "#191c1e",
+                      "outline": "#747686",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-bright": "#f7f9fb",
+                      "background": "#f7f9fb",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "on-secondary-fixed": "#2a1700",
+                      "inverse-surface": "#2d3133",
+                      "outline-variant": "#c4c5d7",
+                      "on-tertiary-container": "#c7d7f2",
+                      "secondary-container": "#fea619",
+                      "surface-variant": "#e0e3e5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "margin-desktop": "32px",
+                      "sm": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "currency-display": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "currency-display": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .glass-header { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.85); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-40 glass-header flex justify-between items-center w-full px-md h-16 shadow-sm">
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-on-surface truncate max-w-[180px]">Villa Benali – Aïn Diab</h1>
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">En cours</span>
+</div>
+</div>
+</div>
+<div class="flex gap-xs">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="px-margin-mobile pt-md space-y-lg">
+<!-- Tab Navigation -->
+<nav class="flex border-b border-outline-variant overflow-x-auto no-scrollbar">
+<button class="flex-none px-lg py-sm font-bold text-primary border-b-2 border-primary">Infos</button>
+<button class="flex-none px-lg py-sm font-label-md text-on-surface-variant hover:text-on-surface transition-colors">Équipe</button>
+<button class="flex-none px-lg py-sm font-label-md text-on-surface-variant hover:text-on-surface transition-colors">Documents</button>
+<button class="flex-none px-lg py-sm font-label-md text-on-surface-variant hover:text-on-surface transition-colors">Photos</button>
+</nav>
+<!-- Info Grid (Bento Style) -->
+<div class="grid grid-cols-2 gap-md">
+<!-- Location Card -->
+<div class="col-span-2 bg-surface rounded-xl p-md shadow-sm border border-outline-variant flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Adresse</p>
+<p class="font-body-md text-body-md font-semibold">24 Rue des Orangers, Casablanca</p>
+</div>
+</div>
+<div class="w-full h-32 rounded-lg overflow-hidden mt-sm relative grayscale-[0.2]">
+<img alt="Map" class="w-full h-full object-cover" data-alt="A clean, minimalist high-contrast digital map interface showing a specific neighborhood in Casablanca, Morocco. The map style is corporate with subtle blue and grey tones, highlighting a single pin on a coastal street near Aïn Diab. Lighting is uniform and bright, matching a professional enterprise SaaS application aesthetic." data-location="Casablanca" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw3k1QSXt6crUec6ae0ya9V622rNL_zNfIIdMUirNB8W-HCmCcqMkac8_3CsQM-9Q6FVlZ9_S32w_zmANG5bzS2iDqB8s8G9yQVLcajHWzN3HorR_OmY1TD01TWXe3Ypk1mU3v-_yofuCQ8CaqZoiBboFmCTowCaJN9ehZ0N6MmV9BSpoBO18ONQTKuEHjqDEsEb6eRRTBQrDkUrHJNB_EOoiLXCOTOvvyOoAIW7FJ3vAQncOdwSuLOnkKKJto5FGvR8aY7CwJ99g"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center border-4 border-white shadow-lg animate-pulse">
+<span class="material-symbols-outlined text-white text-[16px]" data-weight="fill">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dates Card -->
+<div class="bg-surface rounded-xl p-md shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-sm">calendar_today</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Période</p>
+<p class="font-body-md text-body-md font-semibold">Mars - Juil 2024</p>
+</div>
+<!-- Budget Card -->
+<div class="bg-surface rounded-xl p-md shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-sm">payments</span>
+<p class="font-label-md text-label-md text-on-surface-variant">Budget</p>
+<p class="font-currency-display text-currency-display text-currency-mad">250k MAD</p>
+</div>
+<!-- Project Lead Card -->
+<div class="col-span-2 bg-surface rounded-xl p-md shadow-sm border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<img alt="Khalid Mansouri" class="w-12 h-12 rounded-full object-cover" data-alt="A professional headshot of a middle-aged Moroccan engineer with a confident smile, wearing a clean white shirt and a blue safety vest. He is set against a blurred background of a modern architectural site. The lighting is bright and natural, conveying reliability and expertise in a corporate management context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtR6NqfdDF2uAeh4qXnXwQxniO4d7Up78lZz0W_1iSYiPByXsEDpPaw1AhoSkjaLjqmxqnrC3h1iONCrfkb-_R0cc8tDJZr2Yo1mr15Bfv_ZvLn0sTnbJT_J2OYn1CFH4txZpvd_tDirmCDiEHs7Ezxbrw2chazy22utNPLOpaeIh3hZHzfsJoJf__82JsyPUkx0QXbO0YHipfto-vGwkUt4qx5T3V2FQUIFbnbZmPMqE9Um1K1_mLfEo6uZr4ta91qV1JOS9JLi8"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Chef de Chantier</p>
+<p class="font-body-md text-body-md font-semibold">Khalid Mansouri</p>
+</div>
+</div>
+<button class="w-10 h-10 bg-primary-fixed text-on-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+<!-- Progress Timeline -->
+<section class="space-y-md">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Progression des travaux</h3>
+<div class="bg-surface rounded-xl p-md shadow-sm border border-outline-variant space-y-lg relative">
+<!-- Vertical Line -->
+<div class="absolute left-[27px] top-[40px] bottom-[40px] w-0.5 bg-outline-variant"></div>
+<!-- Step 1 -->
+<div class="flex items-start gap-md relative z-10">
+<div class="w-6 h-6 rounded-full bg-success flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-white text-[16px]">check</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md font-bold text-on-surface">Terrassement</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Terminé le 12 Mars</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-md relative z-10">
+<div class="w-6 h-6 rounded-full bg-success flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-white text-[16px]">check</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md font-bold text-on-surface">Gros œuvre</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Terminé le 28 Avril</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-md relative z-10">
+<div class="w-6 h-6 rounded-full bg-primary-fixed border-2 border-primary flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-primary text-[16px] animate-spin">refresh</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-xs">
+<p class="font-body-md text-body-md font-bold text-on-surface">Second œuvre</p>
+<span class="font-label-md text-primary">65%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 65%;"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-sm">En cours d'installation électrique</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Action -->
+<button class="w-full bg-primary text-white py-lg rounded-xl font-headline-md flex items-center justify-center gap-sm shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+            Nouveau rapport journalier
+        </button>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-safe pt-sm md:hidden bg-surface shadow-lg border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-4 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Accueil</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary-fixed rounded-full px-4 py-1 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="foundation" style="font-variation-settings: 'FILL' 1;">foundation</span>
+<span class="font-label-md text-label-md">Chantiers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-4 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-4 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Équipe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 px-4 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="font-label-md text-label-md">Plus</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for cards
+        document.querySelectorAll('.bg-surface').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.classList.add('scale-[0.98]');
+                card.style.transition = 'transform 0.1s ease';
+            });
+            card.addEventListener('touchend', () => {
+                card.classList.remove('scale-[0.98]');
+            });
+        });
+    </script>
+</body></html>

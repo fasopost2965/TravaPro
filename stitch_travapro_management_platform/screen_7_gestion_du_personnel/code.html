@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-fixed": "#001550",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#855300",
+                        "surface-container-highest": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-primary-container": "#cbd4ff",
+                        "tertiary": "#37465c",
+                        "on-secondary-container": "#684000",
+                        "surface-tint": "#1f51da",
+                        "primary": "#0038af",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "inverse-primary": "#b6c4ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-primary-fixed-variant": "#003ab3",
+                        "on-surface": "#191c1e",
+                        "border": "#E2E8F0",
+                        "success": "#10B981",
+                        "primary-container": "#1b4fd8",
+                        "text-muted": "#64748B",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-surface-variant": "#434655",
+                        "secondary-fixed": "#ffddb8",
+                        "danger": "#EF4444",
+                        "tertiary-fixed": "#d3e4fe",
+                        "text-primary": "#0F172A",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface": "#FFFFFF",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#4e5e74",
+                        "currency-mad": "#1B4FD8",
+                        "on-background": "#191c1e",
+                        "outline": "#747686",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-secondary-fixed": "#2a1700",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#c4c5d7",
+                        "on-tertiary-container": "#c7d7f2",
+                        "secondary-container": "#fea619",
+                        "surface-variant": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "margin-desktop": "32px",
+                        "sm": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "currency-display": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "currency-display": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .tab-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="bg-surface shadow-sm docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center w-full px-md h-16">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">TravaPro</h1>
+<div class="flex items-center gap-sm">
+<button class="p-sm rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</button>
+<button class="p-sm rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container ml-sm">
+<span class="text-label-md font-bold">JD</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-lg">
+<!-- Screen Title & Summary -->
+<div class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface">Gestion du Personnel</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">5 membres d'équipe actifs aujourd'hui</p>
+</div>
+<!-- Segmented Tabs Control -->
+<div class="bg-surface-container-low p-xs rounded-xl flex mb-lg">
+<button class="flex-1 py-sm px-md rounded-lg font-label-md text-label-md bg-surface shadow-sm text-primary flex items-center justify-center gap-xs tab-transition">
+<span class="material-symbols-outlined" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+                Employés
+            </button>
+<button class="flex-1 py-sm px-md rounded-lg font-label-md text-label-md text-on-surface-variant flex items-center justify-center gap-xs tab-transition">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+                Véhicules
+            </button>
+</div>
+<!-- Employee List -->
+<div class="space-y-md">
+<!-- Employee Card: Khalid -->
+<div class="bg-surface rounded-xl p-md shadow-[0_2px_8px_rgba(0,0,0,0.08)] flex items-start gap-md border-l-4 border-success">
+<div class="relative">
+<img alt="Khalid" class="w-12 h-12 rounded-full bg-surface-container-high" data-alt="A professional headshot of a middle-aged Moroccan site manager named Khalid. He is wearing a white construction helmet and a high-visibility yellow vest over a blue work shirt. The background shows a sunny construction site with concrete structures and a bright blue sky. The image has a clean, corporate photography style with natural outdoor lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaoh2qNnx2EZU9b2WRUjrRJbW2pTqYsuJiPYcZzEhGOI7Z4DPL5oqV-IAYf3VwZPpZPbFkCJzYuaqtJ11k2KDI3eTTj2eWHlWIy7jN3OLhf4IwW2ex9mOuQlw-cXXw6E4MD_xP1NGr53oDVqNaJcv6aegGpULrdfq1ZCGea2iKC4yZp730Jx3rrQrApeQhO-9hcNH8Yjln_McM-B1EBzn6lKbvmRYNqu0c0jlqPA8_ekaYV63Lt3X7TIGuHqZdWR6Ll1uEwG2kPBI"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-success border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[16px] leading-tight text-on-surface font-bold">Khalid</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Chef de Chantier</p>
+</div>
+<span class="bg-success/10 text-success text-[10px] font-bold px-sm py-xs rounded-full uppercase">Sur Site</span>
+</div>
+<div class="mt-md flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-body-md text-body-md font-semibold">Villa Benali</span>
+</div>
+</div>
+<button class="p-sm text-on-surface-variant"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+<!-- Employee Card: Youssef -->
+<div class="bg-surface rounded-xl p-md shadow-[0_2px_8px_rgba(0,0,0,0.08)] flex items-start gap-md border-l-4 border-success">
+<div class="relative">
+<img alt="Youssef" class="w-12 h-12 rounded-full bg-surface-container-high" data-alt="A high-quality portrait of a young Moroccan mason named Youssef in his late 20s. He is wearing a grey durable cotton work shirt and protective work gloves hanging from his belt. The setting is a modern construction site in Casablanca with glass buildings in the background. The lighting is soft and cinematic, emphasizing a professional yet hardworking atmosphere with a blue-toned color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGeU2zr0DWnOS4t8GMc1e5W0L7Awt8KtyJVEZXhtrENU5v4rSWU63jCjOPMrRAslfEXYI0QYTy-n1_aCD6VxKeuRnh7zsxLLW8J6n4hbI7qUBUwWBXwxu7f3Hyw7fSHXLYR7aLhG5g31TyeGVAl9RfR2Gs1GBlUFU54pR0sm8dpNvXBcPjEf8yB1c5JfLt0Z_CVgOIvBrCcjHQuT7UDsg1BnEoW3zcJNw07AODWPE0kGjexABij6qRpPGbJ-jAWLkXH3mMcKjynSk"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-success border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[16px] leading-tight text-on-surface font-bold">Youssef</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Maçon</p>
+</div>
+<span class="bg-success/10 text-success text-[10px] font-bold px-sm py-xs rounded-full uppercase">Sur Site</span>
+</div>
+<div class="mt-md flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-body-md text-body-md font-semibold">Projet Atlas</span>
+</div>
+</div>
+<button class="p-sm text-on-surface-variant"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+<!-- Employee Card: Sara -->
+<div class="bg-surface rounded-xl p-md shadow-[0_2px_8px_rgba(0,0,0,0.08)] flex items-start gap-md border-l-4 border-primary">
+<div class="relative">
+<img alt="Sara" class="w-12 h-12 rounded-full bg-surface-container-high" data-alt="A professional studio portrait of a Moroccan female plumber named Sara. She is holding a specialized tool kit and wearing a dark blue TravaPro branded polo shirt. Her hair is tied back, and she looks confident. The background is a clean, neutral gradient of light greys. The lighting is bright and even, highlighting her as a skilled professional in a modern enterprise environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb7YIBNoa1kVwepzlaUhpNSpupGM561sZQoL9zoySihRjw0Ax8_QcPMU0XNaU7LzzN4uL1BqM60GAB---yRO5sKOM83oDHUYXBcXZxfmDYCz1oET5yWrAiN272HSB5RlPsEHbF_ONrSTNbp4WjuibW7ytihjNe5rwGqHQfKTgMo2vxP0eQYQZDYNB1u9ju1XMiK59RoFmJxibm6SUf67DZtJYL1k3kc9N4oNbTsbq1M2q-bsqqQmCnW0C1VnKjcdArp7dqNd7B6yY"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[16px] leading-tight text-on-surface font-bold">Sara</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Plombier</p>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold px-sm py-xs rounded-full uppercase">Disponible</span>
+</div>
+<div class="mt-md flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="event_available">event_available</span>
+<span class="font-body-md text-body-md">Aucun chantier assigné</span>
+</div>
+</div>
+<button class="p-sm text-on-surface-variant"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+<!-- Employee Card: Amine -->
+<div class="bg-surface rounded-xl p-md shadow-[0_2px_8px_rgba(0,0,0,0.08)] flex items-start gap-md border-l-4 border-success">
+<div class="relative">
+<img alt="Amine" class="w-12 h-12 rounded-full bg-surface-container-high" data-alt="Portrait of Amine, a professional Moroccan electrician. He is wearing a blue utility jacket with several specialized pockets and safety goggles around his neck. The setting is an indoor industrial space with modern electrical panels and wiring visible. The lighting is cool-toned and crisp, emphasizing precision and technical expertise in a corporate field service context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpXq_GkE6Nw_zENYo2cBsaYaqGAc2PlLb8FAopP3e6WeALbyDuFtkIJypXMTg2928GsUF2K-v39Yw7r3LFUvAuq3S54bhqv1pQVAnHhFupRYnrY0Z6rk0mswdkPZ_K_s0TIjuezIsyCs37MkUgULpP-WP4GjbeVEEOSucNDCMSS5qITEsouUEeIDnASyhd5weS_2kKn7rdLZQKY4zpecw5-RNsP2JuKLFuW3pUPu8YrUOR0pNOI5kTd-VOTVSMX1v3jmwO_q3KWt4"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-success border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[16px] leading-tight text-on-surface font-bold">Amine</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Électricien</p>
+</div>
+<span class="bg-success/10 text-success text-[10px] font-bold px-sm py-xs rounded-full uppercase">Sur Site</span>
+</div>
+<div class="mt-md flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<span class="font-body-md text-body-md font-semibold">Argana Center</span>
+</div>
+</div>
+<button class="p-sm text-on-surface-variant"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+<!-- Employee Card: Rachid -->
+<div class="bg-surface rounded-xl p-md shadow-[0_2px_8px_rgba(0,0,0,0.08)] flex items-start gap-md border-l-4 border-danger opacity-70">
+<div class="relative">
+<img alt="Rachid" class="w-12 h-12 rounded-full bg-surface-container-high" data-alt="A portrait of Rachid, an experienced Moroccan painter in his 50s. He is wearing white overalls with small colorful paint splatters. He has a friendly and approachable expression. The background is a soft-focus interior of a newly painted luxury villa. The overall mood is warm and serene, with bright morning sunlight streaming through large windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_fPajRoy3xiYOj9Jq0u2P448Zuc-5ThTicXA4YfkUva88hO-7XfQOqy1SYeRFLmmjjqjo_er3QYVoN69s7pjf9--3IO7OxfvxgCDpb70OHOLummZqjVELOeiqMdXWBLlFXyiPrdtBiRGlRqvC5fRtJAfMrJqbtU_4mLmU8sSKFloZW5hjUxqw5fK50r3f-vmFFuo7oGz-fXpr0syLCIksMDuFZHC1Kze2g8ouwvIc6g9wCFWpKTHCXfGgER7T67OLGmntwovEiKw"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-danger border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-[16px] leading-tight text-on-surface font-bold">Rachid</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-xs">Peintre</p>
+</div>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-sm py-xs rounded-full uppercase">En Congé</span>
+</div>
+<div class="mt-md flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md">Retour le 15 Nov</span>
+</div>
+</div>
+<button class="p-sm text-on-surface-variant"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</div>
+</div>
+<!-- Add Employee CTA -->
+<div class="mt-lg mb-xl">
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-headline-md text-[16px] flex items-center justify-center gap-sm shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                Ajouter un Employé
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-safe pt-sm md:hidden bg-surface shadow-lg rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-xs">
+<span class="material-symbols-outlined text-[24px]" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Accueil</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-xs">
+<span class="material-symbols-outlined text-[24px]" data-icon="foundation">foundation</span>
+<span class="font-label-md text-label-md">Chantiers</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-xs">
+<span class="material-symbols-outlined text-[24px]" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Finance</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary bg-primary-fixed rounded-full px-4 py-1">
+<span class="material-symbols-outlined text-[24px]" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-md text-label-md font-bold">Équipe</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-xs">
+<span class="material-symbols-outlined text-[24px]" data-icon="more_horiz">more_horiz</span>
+<span class="font-label-md text-label-md">Plus</span>
+</button>
+</nav>
+<script>
+        // Simple haptic-like feedback for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('touchstart', () => {
+                button.classList.add('opacity-80');
+            });
+            button.addEventListener('touchend', () => {
+                button.classList.remove('opacity-80');
+            });
+        });
+
+        // Tab switching logic (Visual only)
+        const tabs = document.querySelectorAll('.tab-transition');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-surface', 'shadow-sm', 'text-primary');
+                    t.classList.add('text-on-surface-variant');
+                });
+                tab.classList.remove('text-on-surface-variant');
+                tab.classList.add('bg-surface', 'shadow-sm', 'text-primary');
+            });
+        });
+    </script>
+</body></html>

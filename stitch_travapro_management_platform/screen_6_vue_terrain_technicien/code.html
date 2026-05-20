@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tap:active {
+            transform: scale(0.96);
+            transition: transform 0.1s ease;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', sans-serif;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-fixed": "#001550",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#855300",
+                        "surface-container-highest": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-primary-container": "#cbd4ff",
+                        "tertiary": "#37465c",
+                        "on-secondary-container": "#684000",
+                        "surface-tint": "#1f51da",
+                        "primary": "#0038af",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "inverse-primary": "#b6c4ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-primary-fixed-variant": "#003ab3",
+                        "on-surface": "#191c1e",
+                        "border": "#E2E8F0",
+                        "success": "#10B981",
+                        "primary-container": "#1b4fd8",
+                        "text-muted": "#64748B",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "secondary-container": "#fea619",
+                        "surface": "#FFFFFF",
+                        "background": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Top Navigation Shell -->
+<header class="bg-surface shadow-sm sticky top-0 z-40 px-md h-16 flex justify-between items-center w-full">
+<div class="flex flex-col">
+<h1 class="font-bold text-primary text-headline-lg-mobile">TravaPro</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a Moroccan construction technician wearing a clean white polo shirt and a navy blue safety cap. The background is a blurred architectural blueprint office with warm, natural sunlight. The image is crisp, modern, and conveys a sense of reliability and professional expertise in a corporate field service environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm-iNywf8BT_eFB_tYUUcc_SBML5u1YeDJVh-UeJz56r9hWsDm-uIJvOvA1OwXydGvcholDg76iK1cp_jBz-eYcWGwOOPn5-KOeBiQqR5jTQDnT_W3DxxRcGi_qOpUd5zRhpIJw7TBvKRq7tQAzH811gOzM1CwzJeFxkLau0MiSeugYIm23c7I8LFZeJOBKIzc524I9d5iJtDj_4SRTJQMDOjAKQSC5qIrOAIdS76kTtxlzWBFshTUfIH90Tb3IN2h0WQp5Ij_9kE"/>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile pt-lg pb-32 space-y-lg">
+<!-- Greeting & Date -->
+<section class="space-y-xs">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Bonjour, Mohammed 👋</h2>
+</div>
+<p class="font-body-md text-on-surface-variant">Lundi 20 May 2024</p>
+</section>
+<!-- Primary Check-in Card -->
+<section class="bg-surface rounded-xl shadow-sm border border-outline-variant p-md relative overflow-hidden">
+<div class="absolute top-0 right-0 p-md">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-md text-label-md">EN COURS</span>
+</div>
+<div class="flex items-center gap-md mb-lg">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="foundation">foundation</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-lg-mobile text-on-surface">Chantier Villa Benali</h3>
+<p class="font-body-md text-on-surface-variant">Quartier Californie, Casablanca</p>
+</div>
+</div>
+<button class="active-tap w-full bg-success text-white py-4 rounded-xl font-bold flex items-center justify-center gap-sm shadow-md">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Pointer l'arrivée</span>
+</button>
+</section>
+<!-- Tasks Checklist -->
+<section class="space-y-sm">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-on-surface">Mes tâches aujourd'hui</h3>
+<span class="text-primary font-label-md text-label-md">2/4 COMPLÉTÉES</span>
+</div>
+<div class="space-y-sm">
+<!-- Task Item 1 -->
+<div class="bg-surface p-md rounded-xl flex items-center justify-between border border-outline-variant shadow-sm active-tap">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 border-2 border-primary rounded-md flex items-center justify-center bg-primary">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="check">check</span>
+</div>
+<span class="font-body-lg line-through text-on-surface-variant">Vérification de l'étanchéité</span>
+</div>
+</div>
+<!-- Task Item 2 -->
+<div class="bg-surface p-md rounded-xl flex items-center justify-between border border-outline-variant shadow-sm active-tap">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 border-2 border-primary rounded-md flex items-center justify-center bg-primary">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="check">check</span>
+</div>
+<span class="font-body-lg line-through text-on-surface-variant">Coffrage des colonnes (Zone A)</span>
+</div>
+</div>
+<!-- Task Item 3 -->
+<div class="bg-surface p-md rounded-xl flex items-center justify-between border-2 border-primary-container shadow-sm active-tap">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 border-2 border-outline rounded-md"></div>
+<span class="font-body-lg text-on-surface font-semibold">Pose de l'armature ferraillage</span>
+</div>
+<span class="text-primary material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<!-- Task Item 4 -->
+<div class="bg-surface p-md rounded-xl flex items-center justify-between border border-outline-variant shadow-sm active-tap">
+<div class="flex items-center gap-md">
+<div class="w-6 h-6 border-2 border-outline rounded-md"></div>
+<span class="font-body-lg text-on-surface">Coulage du béton (après-midi)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Action Grid -->
+<section class="space-y-sm">
+<h3 class="font-headline-md text-on-surface">Actions rapides</h3>
+<div class="bento-grid">
+<button class="active-tap bg-surface-container-low p-lg rounded-2xl border border-outline-variant flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="photo_camera">photo_camera</span>
+<span class="font-label-md text-on-surface">Photos</span>
+</button>
+<button class="active-tap bg-surface-container-low p-lg rounded-2xl border border-outline-variant flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="description">description</span>
+<span class="font-label-md text-on-surface">Rapport</span>
+</button>
+<button class="active-tap bg-surface-container-low p-lg rounded-2xl border border-outline-variant flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-on-surface">Matériaux</span>
+</button>
+<button class="active-tap bg-error-container p-lg rounded-2xl border border-error flex flex-col items-center gap-sm">
+<span class="material-symbols-outlined text-error text-[32px]" data-icon="report_problem">report_problem</span>
+<span class="font-label-md text-on-error-container">Problème</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-safe pt-sm bg-surface shadow-[0_-4px_12px_rgba(0,0,0,0.05)] border-t border-outline-variant md:hidden h-20">
+<!-- Accueil Active -->
+<a class="flex flex-col items-center justify-center text-primary bg-primary-fixed rounded-full px-4 py-1 active-tap" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Accueil</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active-tap" href="#">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+<span class="font-label-md text-label-md">Chantiers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active-tap" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active-tap" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Équipe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active-tap" href="#">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="font-label-md text-label-md">Plus</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for task checklist
+        document.querySelectorAll('.active-tap').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.add('opacity-70');
+                setTimeout(() => this.classList.remove('opacity-70'), 100);
+            });
+        });
+
+        // Toggle task completion visual (simulated)
+        const taskCards = document.querySelectorAll('main section:nth-of-type(3) .bg-surface');
+        taskCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const checkIcon = this.querySelector('.material-symbols-outlined');
+                const text = this.querySelector('span:not(.material-symbols-outlined)');
+                const checkbox = this.querySelector('.w-6');
+                
+                if (checkbox.classList.contains('bg-primary')) {
+                    checkbox.classList.remove('bg-primary');
+                    checkbox.innerHTML = '';
+                    text.classList.remove('line-through', 'text-on-surface-variant');
+                    text.classList.add('text-on-surface');
+                } else {
+                    checkbox.classList.add('bg-primary');
+                    checkbox.innerHTML = '<span class="material-symbols-outlined text-white text-[18px]" data-icon="check">check</span>';
+                    text.classList.add('line-through', 'text-on-surface-variant');
+                    text.classList.remove('text-on-surface');
+                }
+            });
+        });
+    </script>
+</body></html>

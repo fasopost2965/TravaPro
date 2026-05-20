@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Override for specific dark mode dashboard requirement */
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#dce1ff",
+                      "on-primary-fixed": "#001550",
+                      "surface-dim": "#d8dadc",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#1e293b",
+                      "secondary": "#855300",
+                      "surface-container-highest": "#334155",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#1e293b",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "on-primary-container": "#cbd4ff",
+                      "tertiary": "#37465c",
+                      "on-secondary-container": "#684000",
+                      "surface-tint": "#1f51da",
+                      "primary": "#1B4FD8",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "inverse-primary": "#b6c4ff",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-primary-fixed-variant": "#003ab3",
+                      "on-surface": "#f8fafc",
+                      "border": "#334155",
+                      "success": "#10B981",
+                      "primary-container": "#1b4fd8",
+                      "text-muted": "#94a3b8",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "on-surface-variant": "#cbd5e1",
+                      "secondary-fixed": "#ffddb8",
+                      "danger": "#EF4444",
+                      "tertiary-fixed": "#d3e4fe",
+                      "text-primary": "#F8FAFC",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "surface": "#0F172A",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#4e5e74",
+                      "currency-mad": "#1B4FD8",
+                      "on-background": "#f8fafc",
+                      "outline": "#475569",
+                      "surface-container-lowest": "#020617",
+                      "surface-container-high": "#1e293b",
+                      "surface-bright": "#1e293b",
+                      "background": "#0F172A",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "on-secondary-fixed": "#2a1700",
+                      "inverse-surface": "#f8fafc",
+                      "outline-variant": "#334155",
+                      "on-tertiary-container": "#c7d7f2",
+                      "secondary-container": "#fea619",
+                      "surface-variant": "#1e293b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "margin-desktop": "32px",
+                      "sm": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "currency-display": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "currency-display": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-white">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-full p-md space-y-sm bg-surface-container-low border-r border-outline-variant w-64 z-50">
+<div class="flex items-center gap-sm px-sm mb-lg">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-black text-primary">TravaPro</h1>
+<p class="text-[10px] uppercase tracking-wider text-text-muted">Construction Management</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Accueil Active -->
+<a class="flex items-center gap-md px-md py-3 bg-primary-container text-on-primary-container rounded-lg font-semibold transition-transform duration-150 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Accueil</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+<span class="font-label-md text-label-md">Chantiers</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Finance</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Équipe</span>
+</a>
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Paramètres</span>
+</a>
+</nav>
+<button class="w-full py-3 bg-primary text-white rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>Nouveau Projet</span>
+</button>
+<div class="pt-md mt-md border-t border-outline-variant">
+<a class="flex items-center gap-md px-md py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-md text-label-md">Mon Profil</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-md md:px-lg h-16 z-40 shadow-sm bg-surface shrink-0">
+<div class="flex items-center gap-md flex-1">
+<div class="relative w-full max-w-md hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 text-body-md focus:ring-2 focus:ring-primary text-on-surface" placeholder="Rechercher un projet, une facture..." type="text"/>
+</div>
+<span class="md:hidden font-headline-lg text-headline-lg font-bold text-primary">TravaPro</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-sm">
+<img alt="Photo de profil de l'utilisateur" class="w-8 h-8 rounded-full bg-primary-container" data-alt="A professional portrait of a construction project manager in their late 40s wearing a high-visibility vest over a smart casual shirt. The background is a modern architectural office with blueprints and warm artificial lighting. The mood is confident and authoritative, perfectly fitting a premium enterprise SaaS interface with a dark mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbrUpG_XiV1RjdB8ePONfvCNHn6fpicPv3aP1JIL9T_IU1myEHRBXzK5YRGHa80_JWjj-_rbpkvBuIwZFULEoFVjGW_gpBem2blU-UoFgCFGIR1_Ap_FJjt0NPu4gWOBRmbSp0gyph7v_xwnMt8yqPmFF0ClxUM6vmB-zct1KjoVxTvKPUys3G273YZblPyqiK-JML8YQymjXOl_MOoQWtq_4OS9z4OfC1ur9G1eJMq4t0G3fYCy19P9OnI2SW_wGU5dqCQ8ByudE"/>
+<span class="font-label-md text-on-surface hidden sm:block">Admin Portails</span>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-md md:p-lg space-y-lg">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Tableau de Bord</h2>
+<p class="text-on-surface-variant">Bienvenue, voici l'état de vos chantiers aujourd'hui.</p>
+</div>
+<div class="flex gap-sm">
+<div class="px-4 py-2 bg-surface-container-high rounded-lg flex items-center gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md">Octobre 2023</span>
+</div>
+</div>
+</section>
+<!-- KPI Bento Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="glass-card p-md rounded-xl flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-primary/20 text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="text-success flex items-center text-xs font-bold">+12% <span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span></span>
+</div>
+<div>
+<p class="text-text-muted font-label-md">Chiffre d'Affaires</p>
+<p class="font-headline-md text-headline-md text-on-surface">1,240,500 <span class="text-sm font-bold text-primary">MAD</span></p>
+</div>
+</div>
+<div class="glass-card p-md rounded-xl flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-secondary-container/20 text-secondary-container rounded-lg">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+</div>
+<span class="text-on-surface-variant text-xs font-bold">8 En cours</span>
+</div>
+<div>
+<p class="text-text-muted font-label-md">Projets Actifs</p>
+<p class="font-headline-md text-headline-md text-on-surface">24</p>
+</div>
+</div>
+<div class="glass-card p-md rounded-xl flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-tertiary-container/20 text-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<span class="text-success flex items-center text-xs font-bold">94% <span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span></span>
+</div>
+<div>
+<p class="text-text-muted font-label-md">Présence Équipe</p>
+<p class="font-headline-md text-headline-md text-on-surface">42 <span class="text-sm font-normal text-text-muted">/ 45</span></p>
+</div>
+</div>
+<div class="glass-card p-md rounded-xl flex flex-col justify-between h-32 hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-error-container/20 text-error rounded-lg">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<span class="text-error flex items-center text-xs font-bold">3 Urgent</span>
+</div>
+<div>
+<p class="text-text-muted font-label-md">Alertes Conformité</p>
+<p class="font-headline-md text-headline-md text-on-surface">05</p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Active Projects Table -->
+<section class="lg:col-span-2 space-y-md">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-lg text-headline-lg">Chantiers Prioritaires</h3>
+<a class="text-primary font-label-md hover:underline" href="#">Voir tout</a>
+</div>
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant">
+<table class="w-full text-left">
+<thead class="bg-surface-container-high border-b border-outline-variant">
+<tr>
+<th class="px-md py-3 font-label-md text-text-muted">PROJET</th>
+<th class="px-md py-3 font-label-md text-text-muted">CLIENT</th>
+<th class="px-md py-3 font-label-md text-text-muted">AVANCEMENT</th>
+<th class="px-md py-3 font-label-md text-text-muted">BUDGET</th>
+<th class="px-md py-3 font-label-md text-text-muted">STATUT</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-highest/50 transition-colors cursor-pointer">
+<td class="px-md py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover" data-alt="A wide-angle professional photograph of a large-scale modern villa construction site in Casablanca during the golden hour. Scaffolding is visible against a clear blue sky, with workers in safety gear moving efficiently. The lighting is warm and dramatic, emphasizing the structural progress and professional management of the site. High-end architectural visualization style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwf880z8scLiy2vuG6tx9ZoH5XPqnmHIJssBJxSfaRtgjANRPHut65l7G4bz1Vjg5MSFV2SY2uiSmnD2l7wq_E98m_L7HkeprdD2H_74S8RQdnO7uLlAxdA8OKHNtydwMLad4B0Bd12h79DSzMZ01U_1ZMsJOmfkcf6MAqyeByELWO55_tr2KIVxYAE93Hv9cE7ph9Ck175juIfVD-CANQaEbLuDPC0iua_CI2JSPy0jyF4cdlXtVNqtPlfRYEdsimIKPFkE65oiA"/>
+</div>
+<span class="font-body-md font-bold">Villa Marina G3</span>
+</div>
+</td>
+<td class="px-md py-4 text-body-md">Groupe Immobilier</td>
+<td class="px-md py-4">
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+<span class="text-[10px] text-text-muted mt-1 inline-block">65% complété</span>
+</td>
+<td class="px-md py-4 font-bold text-currency-mad">4.2M MAD</td>
+<td class="px-md py-4">
+<span class="px-3 py-1 bg-success/20 text-success text-[10px] font-bold rounded-full uppercase">En cours</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/50 transition-colors cursor-pointer">
+<td class="px-md py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover" data-alt="A close-up shot of a modern glass and steel office building under construction in Rabat's financial district. The scene captures the reflection of the surrounding urban landscape in the newly installed glass panels. The lighting is sharp and clinical, highlighting the precision of the construction. Professional photography for a real estate developer's portfolio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC17kWHWSkUPZ_oOEYvC1XkxJ-9XrWUP3--5DRG-BQLKUd0bl8IR2VYzoQzAmIrAPhj5cneIkjs89Z_4Tu0G0n1__DCm20l2X_p0l-PVESfY0E6tRdlEY2r8-dWY80pbTpzdVRAHPQgwnKS_L9SWzY1sHpiNWG20MhOWp_ArwU88zqlvmy1c1Kj36XfAqhcU7CN8iBOPcKT5fzF4-BFrCmo9AyGBNtCGhQZS8vbIEHaycJOGoK5wVIviAgRQlCarfivd9iY_M6fboA"/>
+</div>
+<span class="font-body-md font-bold">Tour Finance B</span>
+</div>
+</td>
+<td class="px-md py-4 text-body-md">Banque Populaire</td>
+<td class="px-md py-4">
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-[30%]"></div>
+</div>
+<span class="text-[10px] text-text-muted mt-1 inline-block">30% complété</span>
+</td>
+<td class="px-md py-4 font-bold text-currency-mad">12.8M MAD</td>
+<td class="px-md py-4">
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary-container text-[10px] font-bold rounded-full uppercase">Attente Mat.</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest/50 transition-colors cursor-pointer">
+<td class="px-md py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="Project Thumbnail" class="w-full h-full object-cover" data-alt="Aerial view of a major infrastructure project involving new highway construction in Morocco. Heavy machinery like excavators and steamrollers are active on a wide stretch of flattened earth. The environment is dusty but organized, illuminated by bright, midday sun. The shot conveys scale, power, and national development." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Bw-2H16uAl6s7o88cg4AaQbDkCgtabtOX8A5Y7GoX8Dxe4mCbWVYRk-ERqUeou5eB8p11IldDctkxH8YIu4131xuoc-nC7LIQ2QQUNA10UlqZOVm7bsVhdVgjV3nXT0yNrL6SPqPbnKkzD0g-GfEYnvytYXpCrxWdqKJgEXUqOkyFWfOD8nfy3pXXQsBKD06hGTibU6J9fN_qSsvm3Pje64Q5g9-3KUq7mycu4Y11QuSdxEswky3aTG3i9o0hZviNCNeICT05wM"/>
+</div>
+<span class="font-body-md font-bold">Route N10 Extension</span>
+</div>
+</td>
+<td class="px-md py-4 text-body-md">Ministère Équip.</td>
+<td class="px-md py-4">
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+<span class="text-[10px] text-text-muted mt-1 inline-block">88% complété</span>
+</td>
+<td class="px-md py-4 font-bold text-currency-mad">850K MAD</td>
+<td class="px-md py-4">
+<span class="px-3 py-1 bg-success/20 text-success text-[10px] font-bold rounded-full uppercase">Finition</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Activity Timeline -->
+<section class="space-y-md">
+<h3 class="font-headline-lg text-headline-lg">Activités Récentes</h3>
+<div class="glass-card rounded-xl p-md space-y-md h-[400px] overflow-y-auto">
+<div class="relative pl-6 space-y-lg">
+<!-- Timeline Line -->
+<div class="absolute left-[7px] top-2 bottom-2 w-[2px] bg-outline-variant"></div>
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-surface"></div>
+<p class="text-xs text-text-muted mb-1">Il y a 10 min</p>
+<p class="font-body-md text-on-surface"><strong>Ahmed Bennani</strong> a validé le bon de livraison pour Villa Marina G3.</p>
+<p class="text-xs text-primary font-bold mt-1">#LIV-2023-0042</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-secondary-container border-4 border-surface"></div>
+<p class="text-xs text-text-muted mb-1">Il y a 1 heure</p>
+<p class="font-body-md text-on-surface">Alerte retard sur le lot "Plomberie" - Tour Finance B.</p>
+<div class="mt-2 px-3 py-2 bg-surface-container-highest rounded-lg border-l-4 border-error">
+<p class="text-xs text-on-surface italic">"Le fournisseur signale un retard de 48h sur les colonnes montantes."</p>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-success border-4 border-surface"></div>
+<p class="text-xs text-text-muted mb-1">Il y a 4 heures</p>
+<p class="font-body-md text-on-surface">Paiement reçu : <strong>340,000 MAD</strong> de Groupe Immobilier.</p>
+<p class="text-xs text-success font-bold mt-1">Facture #FA-1002</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-outline border-4 border-surface"></div>
+<p class="text-xs text-text-muted mb-1">Hier, 17:30</p>
+<p class="font-body-md text-on-surface">Rapport journalier soumis pour <strong>Route N10 Extension</strong>.</p>
+<p class="text-xs text-on-surface-variant mt-1">Météo : Ensoleillé • Effectif : 18</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Stats -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-lg pb-xl">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<h4 class="font-headline-md text-headline-md">Conformité Administrative</h4>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center p-sm bg-surface-container-highest rounded-lg">
+<span class="font-body-md">Assurance RC Décennale</span>
+<span class="px-2 py-1 bg-success/20 text-success text-[10px] font-bold rounded">VALIDE</span>
+</div>
+<div class="flex justify-between items-center p-sm bg-surface-container-highest rounded-lg">
+<span class="font-body-md">Mise à jour ICE / RC</span>
+<span class="px-2 py-1 bg-success/20 text-success text-[10px] font-bold rounded">À JOUR</span>
+</div>
+<div class="flex justify-between items-center p-sm bg-surface-container-highest rounded-lg">
+<span class="font-body-md">Certificats CNSS</span>
+<span class="px-2 py-1 bg-error/20 text-error text-[10px] font-bold rounded">EXPIRE DANS 4J</span>
+</div>
+</div>
+</div>
+<div class="bg-primary p-md rounded-xl text-white relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-2">Optimisation TravaPro</h4>
+<p class="text-white/80 text-body-md mb-4">Votre performance opérationnelle a augmenté de 18% par rapport au mois dernier. Continuez ainsi !</p>
+<button class="px-6 py-2 bg-white text-primary rounded-lg font-bold hover:bg-opacity-90 transition-all">Consulter les analyses</button>
+</div>
+<!-- Abstract Design Element -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute right-10 top-5 w-20 h-20 bg-white/5 rounded-full blur-xl"></div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm pb-safe pt-sm md:hidden bg-surface shadow-lg border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-primary bg-primary-fixed rounded-full px-4 py-1 transition-transform active:scale-90 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Accueil</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-transform active:scale-90 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+<span class="font-label-md text-label-md">Chantiers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-transform active:scale-90 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-transform active:scale-90 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Équipe</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-transform active:scale-90 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+<span class="font-label-md text-label-md">Plus</span>
+</a>
+</nav>
+</div>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = 'rgba(27, 79, 216, 0.4)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            });
+        });
+    </script>
+</body></html>

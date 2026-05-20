@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravaPro - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-fixed": "#001550",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#855300",
+                        "surface-container-highest": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-primary-container": "#cbd4ff",
+                        "tertiary": "#37465c",
+                        "on-secondary-container": "#684000",
+                        "surface-tint": "#1f51da",
+                        "primary": "#0038af",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "inverse-primary": "#b6c4ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-primary-fixed-variant": "#003ab3",
+                        "on-surface": "#191c1e",
+                        "border": "#E2E8F0",
+                        "success": "#10B981",
+                        "primary-container": "#1b4fd8",
+                        "text-muted": "#64748B",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-surface-variant": "#434655",
+                        "secondary-fixed": "#ffddb8",
+                        "danger": "#EF4444",
+                        "tertiary-fixed": "#d3e4fe",
+                        "text-primary": "#0F172A",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface": "#FFFFFF",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#4e5e74",
+                        "currency-mad": "#1B4FD8",
+                        "on-background": "#191c1e",
+                        "outline": "#747686",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-secondary-fixed": "#2a1700",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#c4c5d7",
+                        "on-tertiary-container": "#c7d7f2",
+                        "secondary-container": "#fea619",
+                        "surface-variant": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "margin-desktop": "32px",
+                        "sm": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .blueprint-pattern {
+            background-color: #f7f9fb;
+            background-image: 
+                linear-gradient(#e2e8f0 1px, transparent 1px),
+                linear-gradient(90deg, #e2e8f0 1px, transparent 1px),
+                linear-gradient(#e2e8f0 0.5px, transparent 0.5px),
+                linear-gradient(90deg, #e2e8f0 0.5px, transparent 0.5px);
+            background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+            background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="blueprint-pattern font-body-md text-on-surface min-h-screen flex flex-col items-center justify-center p-margin-mobile">
+<!-- Content Canvas -->
+<main class="w-full max-w-[393px] mx-auto bg-surface/80 backdrop-blur-md rounded-[2.5rem] shadow-2xl overflow-hidden border border-white/50 flex flex-col items-center pt-xl pb-lg px-lg">
+<!-- Language Toggle -->
+<div class="w-full flex justify-end mb-lg">
+<div class="bg-surface-container-high rounded-full p-xs flex items-center space-x-xs">
+<button class="px-sm py-[2px] rounded-full text-label-md font-label-md bg-primary text-on-primary transition-all duration-200" id="btn-fr" onclick="toggleLang('FR')">🇫🇷 FR</button>
+<button class="px-sm py-[2px] rounded-full text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-highest transition-all duration-200" id="btn-ar" onclick="toggleLang('AR')">🇲🇦 AR</button>
+</div>
+</div>
+<!-- Logo Section -->
+<div class="flex flex-col items-center mb-xl">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center shadow-lg mb-md transform rotate-3">
+<span class="material-symbols-outlined text-white text-[40px]" data-icon="foundation">foundation</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tighter mb-xs">TravaPro</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-center px-md">Gérez vos chantiers, où que vous soyez.</p>
+</div>
+<!-- Login Form -->
+<form class="w-full space-y-md" onsubmit="return false;">
+<!-- Role Selector -->
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant ml-xs">Rôle</label>
+<div class="flex flex-wrap gap-xs">
+<button class="role-pill flex-1 py-sm px-xs border border-outline-variant rounded-xl font-label-md text-label-md text-on-surface-variant bg-surface hover:bg-surface-container-low transition-all" onclick="selectRole(this)" type="button">Admin</button>
+<button class="role-pill flex-1 py-sm px-xs border-2 border-primary bg-primary-fixed text-on-primary-fixed rounded-xl font-label-md text-label-md font-bold transition-all" onclick="selectRole(this)" type="button">Chef de chantier</button>
+<button class="role-pill flex-1 py-sm px-xs border border-outline-variant rounded-xl font-label-md text-label-md text-on-surface-variant bg-surface hover:bg-surface-container-low transition-all" onclick="selectRole(this)" type="button">Technicien</button>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant ml-xs" for="email">Email professionnel</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors" data-icon="mail">mail</span>
+<input class="w-full pl-xl pr-md py-md bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-outline-variant font-body-md text-body-md" id="email" placeholder="nom@entreprise.ma" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-sm">
+<div class="flex justify-between items-center px-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Mot de passe</label>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">Oublié ?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors" data-icon="lock">lock</span>
+<input class="w-full pl-xl pr-xl py-md bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-outline-variant font-body-md text-body-md" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-outline-variant hover:text-outline transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-primary-container text-on-primary py-md rounded-xl font-headline-md text-headline-md shadow-lg hover:shadow-xl hover:bg-primary transition-all active:scale-[0.98] mt-lg flex items-center justify-center space-x-sm" type="submit">
+<span>Se connecter</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Footer / Extra info -->
+<div class="mt-xl text-center space-y-md">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Pas encore de compte ? <a class="text-primary font-bold hover:underline" href="#">Contacter l'administrateur</a>
+</p>
+<!-- Moroccan Compliances Mockup -->
+<div class="flex justify-center items-center space-x-md pt-md opacity-40 grayscale">
+<div class="text-[10px] font-bold border border-on-surface-variant px-xs rounded">ICE COMPLIANT</div>
+<div class="text-[10px] font-bold border border-on-surface-variant px-xs rounded">MAROC PME</div>
+</div>
+</div>
+<!-- Moroccan Tile Decorative Element (Subtle bottom edge) -->
+<div class="w-full h-2 mt-xl flex space-x-1 overflow-hidden opacity-20">
+<div class="flex-1 bg-primary h-full rounded-full"></div>
+<div class="flex-1 bg-secondary-container h-full rounded-full"></div>
+<div class="flex-1 bg-primary h-full rounded-full"></div>
+<div class="flex-1 bg-secondary-container h-full rounded-full"></div>
+<div class="flex-1 bg-primary h-full rounded-full"></div>
+</div>
+</main>
+<!-- Background Decoration Images -->
+<div class="fixed top-0 left-0 -z-10 w-full h-full pointer-events-none overflow-hidden">
+<img class="absolute -top-20 -right-20 w-1/2 opacity-5 rotate-12 blur-sm" data-alt="A professional construction site in Morocco featuring high-rise buildings under a clear blue sky. The scene is bathed in warm natural sunlight, creating a bright and optimistic atmosphere. The composition emphasizes architectural precision and progress, with steel structures and cranes visible in the background. The color palette is dominated by sun-bleached tones, clean white concrete, and the deep blue of the sky, reflecting a corporate and reliable aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-uyIWHL3tdSZ20-Fts6PS_Vc-0ZEzCbqASlyliKT2lqAkHdV0Nzpc4JKhGcuap4M--Z3EUbe4FFisudhum2Spx-nEp0tEe9LwQuqS1-Z2EONlXmvaEZHA8ED-wegYcNWk3VX5ojq1ctnQ9GXwbh1g9qi47WwvDELm0g6XcTts3cfUEO6cBRMR2g9ScPMGR80B243IqTdf7B8vaiWoFfpYOMUSfZlLhXbfhbnhKitPrA76XHT3pAlrdgSPgVM3J7Pe6r-F0RySuY"/>
+<img class="absolute -bottom-20 -left-20 w-1/2 opacity-5 -rotate-12 blur-sm" data-alt="Modern architectural blueprints and technical drawings laid out on a clean white desk. The lighting is soft and professional, highlighting the intricate geometric lines and measurements. The aesthetic is minimalist and high-contrast, using a palette of crisp whites and primary blue ink. The overall mood is one of meticulous planning and engineering excellence in a contemporary Moroccan office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0oLT9PWBYbBsiaokyGDsLAs1uObKdngEtbJCqlKe8bS69lN91GJFbCryLkjE8BtY3L1Yj6aGCVERyj9GiEghNbNdiYbWquvMSKuAR6Qog_gXZUGIT-mB3PJqhc1U9M_BY0OU7Yl7XXt6s_o2QXP4mEvR8gUbFS_1N-EpLEt9lgtXybBORvMipR9Ru-gAswS0GKGXDVXuqCfWqmviJQwcQAwqmYUD_L5kngnbpwtLC1XKPIWxsCLuCbbgTP9V1iYGxIgA-ax7p_d0"/>
+</div>
+<script>
+        function toggleLang(lang) {
+            const btnFr = document.getElementById('btn-fr');
+            const btnAr = document.getElementById('btn-ar');
+            
+            if (lang === 'FR') {
+                btnFr.classList.add('bg-primary', 'text-on-primary');
+                btnFr.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-highest');
+                btnAr.classList.remove('bg-primary', 'text-on-primary');
+                btnAr.classList.add('text-on-surface-variant', 'hover:bg-surface-container-highest');
+            } else {
+                btnAr.classList.add('bg-primary', 'text-on-primary');
+                btnAr.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-highest');
+                btnFr.classList.remove('bg-primary', 'text-on-primary');
+                btnFr.classList.add('text-on-surface-variant', 'hover:bg-surface-container-highest');
+                // Mock AR translation shift could go here
+            }
+        }
+
+        function selectRole(btn) {
+            document.querySelectorAll('.role-pill').forEach(b => {
+                b.classList.remove('border-2', 'border-primary', 'bg-primary-fixed', 'text-on-primary-fixed', 'font-bold');
+                b.classList.add('border', 'border-outline-variant', 'text-on-surface-variant', 'bg-surface');
+            });
+            btn.classList.add('border-2', 'border-primary', 'bg-primary-fixed', 'text-on-primary-fixed', 'font-bold');
+            btn.classList.remove('border', 'border-outline-variant', 'text-on-surface-variant', 'bg-surface');
+        }
+
+        // Lightweight ripple-like micro-interaction on the main button
+        const loginBtn = document.querySelector('button[type="submit"]');
+        loginBtn.addEventListener('mousedown', function() {
+            this.style.transform = 'scale(0.96)';
+        });
+        loginBtn.addEventListener('mouseup', function() {
+            this.style.transform = 'scale(1)';
+        });
+        loginBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+</body></html>
